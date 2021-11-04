@@ -1,0 +1,98 @@
+// Swap List of Tokens
+div.swapList {
+  position: absolute;
+  top: 0%;
+  left: 0;
+  right: 0;
+  width: 450px;
+  margin: 0 auto;
+  background: #0d121c;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 50%);
+  border-radius: 20px;
+  z-index: 1;
+  
+  div.topMenu {
+    display: flex;
+    align-items: center;
+
+    div.close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px;
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      color: #93acd3;
+      background: #161f2c;
+      box-shadow: rgb(25 19 38 / 10%) 0px 2px 12px -8px,
+        rgb(25 19 38 / 5%) 0px 1px 1px;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        filter: brightness(0.9);
+        box-shadow: none;
+      }
+    }
+    
+    input {
+      border: 0;
+      border-radius: 4px;
+      color: #dddddd;
+      background-color: #161f2c;
+      padding-inline: 10px;
+      font-size: 12px;
+      height: 24px;
+      box-shadow: rgb(25 19 38 / 10%) 0px 2px 12px -8px,
+        rgb(25 19 38 / 5%) 0px 1px 1px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  div.list {
+    height: 400px;
+    overflow-y: auto;
+
+    div.token {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      border-top: 1px solid #141c2c;
+      cursor: pointer;
+      user-select: none;
+
+      img {
+        width: 24px;
+        margin-right: 10px;
+      }
+
+      p.symbol {
+        color: #dddddd;
+        font-weight: 500;
+      }
+
+      p.name {
+        font-size: 12px;
+        font-weight: 400;
+        color: #93acd3;
+      }
+
+      &:hover {
+        background: rgba(4,4,5,.05);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  div.swapList {
+    width: 95%;
+  }
+}

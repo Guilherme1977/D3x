@@ -1,0 +1,154 @@
+div.leftMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #161f2c;
+  height: 100vh;
+  width: 60px;
+  overflow: hidden;
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 10%);
+  z-index: 10;
+  transition: 0.3s ease;
+
+  &.expanded {
+    width: 200px;
+  }
+
+  div.menu {
+    z-index: 10;
+    width: 200px;
+    
+    ul {
+      list-style: none;
+      
+      li {
+        display: flex;
+        align-items: center;
+        color: #93acd3;
+        font-size: 13px;
+        font-weight: 500;
+        margin-block: 15px;
+        padding-block: 14px;
+        padding-left: 20px;
+        opacity: 0.6;
+        transition: 0.2s ease;
+        cursor: pointer;
+        user-select: none;
+      
+        i {
+          font-size: 18px;
+          width: 40px;
+        }
+
+        &.selected { 
+          color: #c1cfe6;
+          border-right: 3px solid #9639ff;
+          background-color: #9639ff09;
+          opacity: 1; 
+          
+          i {
+            color: #9639ff;
+          }
+        }
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  } // div.menu
+
+  div.bottom {
+    margin-top: auto;
+    margin-bottom: 10px;
+    z-index: 10;
+    width: 200px;
+
+    ul.net {
+      list-style: none;
+      margin-left: 20px;
+
+      li {
+        margin-block: 20px;
+        color: #ffffff;
+
+        &.network {
+          display: flex;
+          align-items: center;
+          font-size: 11px;
+          font-weight: 500;
+        }
+      }
+    }
+
+    ul.social {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-bottom: 1px solid #1f2b3c;
+      padding-bottom: 10px;
+      margin-inline: 14px;
+
+      li {
+        color: #879292;
+        transition: 0.2s ease;
+        cursor: pointer;
+
+        &:hover { color: #808080; }
+      }
+    }
+  }
+
+  div.metamask {
+    margin: 15px 10px;
+    display: none;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    background: linear-gradient(150deg, #9639ff 30%, #268ffc 100%);
+    color: #ffffff;
+    height: 34px;
+    width: fit-content;
+    padding-inline: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: 0.1s ease;
+
+    &:active { transform: scale(0.98); }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  div.leftMenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    width: 70%;
+
+    div.menu {
+      width: 100%;
+
+      ul {
+
+        li {
+
+          &:nth-of-type(1) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    div.bottom {
+      width: 100%;
+    }
+
+    div.metamask {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,90 @@
+div.slippage {
+  color: #93acd3;
+    
+  p.infoHeader {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 10px 5px 10px 0;
+    
+    i {
+      margin-right: 4px;
+    }
+    
+    &:not(:first-of-type) {
+      margin-top: 14px;
+    }
+  }
+  
+  p.error {
+    color: #9639ff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 0 0 10px;
+  }
+  
+  div.top {
+    display: grid;
+    grid-template-columns: 15% 15% 15% 51% 4%;
+    
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 500;
+      margin-left: 4px;
+    }
+    
+    div.slipBtn {
+      color: #bcd2f5;
+      background: #0e0e14;
+      border-radius: 10px;
+      padding-block: 10px;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8;
+      }
+
+      &:active {
+        filter: brightness(0.9);
+      }
+      
+      &.active {
+        background-color: #9639ff;
+        color: #ffffff;
+      }
+    }
+    
+    input {
+      border: 0;
+      color: #93acd3;
+      background-color: #0e0e14;
+      border: 0;
+      padding: 10px;
+      border-radius: 10px;
+      font-weight: 500;
+      font-size: 13px;
+      
+      &:focus {
+        outline: none;
+      }
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+    }
+  }
+  
+  div.top > * {
+    margin-inline: 2px;
+  }
+}

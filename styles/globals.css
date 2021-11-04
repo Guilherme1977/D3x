@@ -1,0 +1,85 @@
+@font-face {
+  font-family: 'Cera Pro';
+  font-weight: 400;
+  src: url(/fonts/CeraProRegular.otf);
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  font-weight: 500;
+  src: url(/fonts/CeraProMedium.otf);
+}
+
+@font-face {
+  font-family: 'Cera Pro';
+  font-weight: 600;
+  src: url(/fonts/CeraProBold.otf);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Cera Pro';
+  scroll-behavior: smooth;
+}
+
+
+body {
+  background: #0d121c;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+div.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../public/images/svg/blobs.svg);
+  opacity: 0.8;
+}
+
+div.layout {
+  display: flex;
+}
+
+div.layout main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  width: calc(100% - 60px);
+  height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d121c; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #161f2c;
+}
+
+@media screen and (max-width: 650px) {
+  div.layout {
+    display: block;
+  }
+
+  div.layout div.rightMenu {
+    width: 100%;
+  }
+}
