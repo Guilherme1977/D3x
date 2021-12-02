@@ -4,11 +4,12 @@ div.swapList {
   top: 0%;
   left: 0;
   right: 0;
-  width: 450px;
+  width: 400px;
   margin: 0 auto;
-  background: #0d121c;
-  box-shadow: 0 0 15px 0 rgb(0 0 0 / 50%);
-  border-radius: 20px;
+  background: #000000;
+  border-radius: 12px;
+  border: 1px solid #0f141d;
+  box-shadow: 0px 1px 20px #000000;
   z-index: 1;
   
   div.topMenu {

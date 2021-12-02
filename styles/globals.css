@@ -26,7 +26,7 @@
 
 
 body {
-  background: #0d121c;
+  background: #000000;
 }
 
 a {
@@ -34,31 +34,29 @@ a {
   text-decoration: none;
 }
 
-
-div.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: url(../public/images/svg/blobs.svg);
-  opacity: 0.8;
-}
-
 div.layout {
   display: flex;
 }
 
 div.layout main {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin-left: auto;
   width: calc(100% - 60px);
   height: 100vh;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 ::-webkit-scrollbar {
@@ -67,11 +65,24 @@ div.layout main {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0d121c; 
+  background: #000000; 
 }
  
 ::-webkit-scrollbar-thumb {
-  background: #161f2c;
+  background: #161f2ca7;
+}
+
+::placeholder { 
+  color: #6880a7;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: #6880a7;
+}
+
+::-ms-input-placeholder { 
+  color: #6880a7;
 }
 
 @media screen and (max-width: 650px) {
@@ -79,7 +90,7 @@ div.layout main {
     display: block;
   }
 
-  div.layout div.rightMenu {
+  div.layout main {
     width: 100%;
   }
 }

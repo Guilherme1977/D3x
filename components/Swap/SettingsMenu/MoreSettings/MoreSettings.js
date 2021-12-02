@@ -1,9 +1,6 @@
-import { useState } from 'react'
 import styles from './MoreSettings.module.scss'
 
-const MoreSettings = () => {
-  const [nonce, setNonce] = useState()
-  const [gas, setGas] = useState(300000)
+const MoreSettings = ({nonce, setNonce, gas, setGas}) => {
 
   return (
     <div className={styles.moreSettings}>

@@ -15,7 +15,7 @@ const LeftMenu = ({menu, network, ethereumAvailability}) => {
         <ul>
           <li onClick={() => setExpand(!expand)}><i className={!expand ? 'far fa-bars' : 'far fa-times'}></i></li>
           <li onClick={() => loadURL('https://www.belair.finance')}><i className='fad fa-th-large'></i> Home</li>
-          <li className={styles.selected} onClick={() => loadURL('https://swap.belair.finance')}><i className='fad fa-route'></i> Swap</li>
+          <li className={styles.selected} onClick={() => loadURL('https://dex.belair.finance')}><i className='fad fa-route'></i> Swap</li>
           <li onClick={() => loadURL('/')}><i className='fad fa-store'></i> NFT Marketplace</li>
         </ul>
       </div>

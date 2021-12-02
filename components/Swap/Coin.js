@@ -2,17 +2,15 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import styles from './Coin.module.scss'
 
-const Coin = ({wallet, coin, network, coin1Input, setCoin1Input, coin2Input, setCoin2Input, setSwapMenu, calculateInputs}) => {
+const Coin = ({wallet, coin, network, coin1Input, setCoin1Input, coin2Input, setCoin2Input, setSwapMenu, getSwapPairPrice}) => {
   const [balance, setBalance] = useState(0)
 
   const getCoinBalance = async() => {
-    console.log('test')
-
     let res = await axios.post('/api/get-balance', {
-      tokenAddress: coin.address,
+      tokenAddress: coin?.address,
       walletAddress: wallet,
       network: network,
-      symbol: coin.symbol
+      symbol: coin?.symbol
     })
     
     setBalance(res.data)
@@ -27,15 +25,17 @@ const Coin = ({wallet, coin, network, coin1Input, setCoin1Input, coin2Input, set
     <div className={styles.card}>
       <div className={styles.top}>
         <div className={styles.coin} onClick={() => setSwapMenu(true)}>
-          <img src={coin.logoURI} alt='' />
-          <p>{coin.symbol}</p>
+          <img src={coin?.logoURI} alt='' />
+          <p>{coin?.symbol}</p>
           <i className='far fa-chevron-down'></i>
         </div>
         
         {coin1Input !== false ?
           <input 
+            type='number'
             placeholder={0.0} 
             value={coin1Input} 
+            // onKeyPress={getSwapPairPrice}
             onChange={e => setCoin1Input(e.target.value)} />
         :
           coin2Input === 'loading' ? <i className={`fa fa-spinner-third ${styles.inputSpinner}`}></i> :
@@ -47,10 +47,9 @@ const Coin = ({wallet, coin, network, coin1Input, setCoin1Input, coin2Input, set
       </div>
 
       <div className={styles.bottom}>
-        <p>Balance: {balance.toFixed(4)} {coin.symbol}</p>
-        {/* <p>~ 0.0</p> */}
+        <p>Balance: {balance.toFixed(4)} {coin?.symbol}</p>
         {coin1Input === false &&
-          <div className={styles.calculate} onClick={calculateInputs}>
+          <div className={styles.calculate} onClick={getSwapPairPrice}>
             <i className='fad fa-calculator-alt'></i>
           </div>
         }

@@ -1,132 +1,100 @@
 header.header {
-  position: sticky;
+  position: absolute;
   top: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-inline: 20px;
-  padding-block: 6px;
-  backdrop-filter: blur(20px);
-  z-index: 9;
+  left: 0;
+  right: 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 20px 32px;
+  z-index: 10;
   
   div.left {
-    padding-left: 10px;
-    padding-block: 10px;
+    display: flex;
+    align-items: center;
 
-    div.brand {
+    div.logo {
       display: flex;
       align-items: center;
+      width: fit-content;
       cursor: pointer;
-      user-select: none;
       transition: 0.1s ease;
+
+      p {
+        color: #ffffff;
+        font-weight: 600;
+      }
       
       img {
-        width: 24px;
-        margin-right: 5px;
+        width: 30px;
+        margin-inline: 10px;
       }
       
-      p.logo {
-        font-size: 18px;
-        font-weight: 600;
-        margin-left: 4px;
-        margin-top: 3px;
-        color: #ffffff;
+      &:active {
+        transform: scale(0.96);
       }
-      
-      &:active { transform: scale(0.98); }
+    }
+
+    div.app {
+      font-size: 14px;
+      font-weight: 500;
+      color: #93acd3;
+      padding: 7px 10px;
+      border-radius: 8px;
+      margin-left: 2px;
     }
   }
 
   div.right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 
-    div.pfp {
-      position: relative;
-      
-      div.imgContainer {
-        border: 1px solid #9639ff;
-        border-radius: 50px;
-        padding: 2px;
-        margin-left: 15px;
-        cursor: pointer;
-        transition: 0.1s ease;
-        
-        div.img {
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          width: 32px;
-          height: 32px;
-          border-radius: 50px;
-          margin-top: 0;
-        }
-        
-        &:active { transform: scale(0.95); }
-      }
-
-      div.dropdown {
-        position: absolute;
-        right: 0px;
-        margin-top: 4px;
-        background-color: #0e0e15;
-        color: #dddddd;
-        width: 140px;
-        border-radius: 8px;
-        box-shadow: rgb(4 4 5 / 20%) 0px 7px 36px -8px;
-        z-index: 10;
-  
-        p {
-          cursor: pointer;
-          user-select: none;
-          font-weight: 500;
-          font-size: 12px;
-          transition: all 0.12s ease-in-out 0s;
-          text-align: left;
-          padding: 10px 10px;
-          margin-inline: 5px;
-          border-radius: 6px;
-          
-          i { margin-right: 4px; }
-  
-          &:first-of-type { margin-top: 5px; }
-          &:last-of-type { margin-bottom: 5px; }
-  
-          &:hover { background-color: rgba(56, 56, 84, 0.228); }
-        }
-      }
+    div.wallet {
+      font-size: 13px;
+      font-weight: 500;
+      color: #93acd3;
+      margin-right: 10px;
+      padding: 7px 10px;
+      border-radius: 8px;
     }
   }
 
   div.btn {
     display: flex;
     align-items: center;
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 500;
-    background: linear-gradient(150deg, #9639ff 30%, #268ffc 100%);
-    color: #ffffff;
-    height: 34px;
-    padding-inline: 18px;
-    margin-left: 20px;
-    border-radius: 50px;
+    color: #93acd3;
+    padding-block: 10px;
+    margin-inline: 15px;
+    border-radius: 8px;
     cursor: pointer;
     user-select: none;
     transition: 0.1s ease;
-
+    
     &:active { transform: scale(0.98); }
+
+    &:hover { color: #9f4bff; }
   }
 
   div.bar {
     display: none;
-    box-shadow: 0 0 15px 0 rgb(0 0 0 / 3%);
-    background-color: #ffffff;
-    color: #ffffff;
-    margin-left: 15px;
+  }
+
+  div.connect {
+    font-size: 14px;
   }
 }
 
 @media screen and (max-width: 650px) {
   header.header {
+
+    div.left {
+  
+      div.logo {
+        width: fit-content;
+      }
+    }
 
     div.bar {
       display: flex;
@@ -140,27 +108,11 @@ header.header {
 
 @media screen and (max-width: 500px) {
   header.header {
-    padding: 16px 8px;
+    padding-block: 10px;
+    padding-inline: 6px 18px;
 
-    div.left {
-      padding: 0;
-
-      div.brand {
-
-        p.logo {
-          font-size: 14px;
-
-          // span { display: none; }
-        }
-      }
-    } 
-  }
-}
-
-//Only show on 3x density devices
-@media only screen and (-webkit-min-device-pixel-ratio: 3) {
-  header.header {
-    -webkit-backdrop-filter: blur(20px);
-    // background-color: #000000;
+    div.btn {
+      margin-inline: 0;
+    }
   }
 }
