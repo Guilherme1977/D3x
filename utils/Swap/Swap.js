@@ -4,7 +4,7 @@ import axios from 'axios'
 
 export const swap = async(fromToken, toToken, slippage, amount, wallet, networkID) => {
   console.log({ fromToken, toToken, slippage, amount, wallet })
-  const referrerAddress = '0xb6041f77610643A90B39Ee03d6ad77AeC7B96425' // referrer address for the 0.1% cut
+  const referrerAddress = '0x7348e031698eE8D3C3451a9B1F71A5779b1e62e2' // referrer address for the 0.1% cut
   const referrerFee = 0.1
   const web3 = new Web3(ethereum)
   // convert the .amount to wei
