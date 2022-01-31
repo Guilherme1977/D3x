@@ -5,7 +5,7 @@ import BigNumber from 'bignumber.js'
 export default async function handler(req, res) {
   const { fromToken, toToken, slippage, amount, network, address } = req.body
   console.log({ fromToken, toToken, slippage, amount, network, address })
-  const referrerAddress = '0xd3120FC80E8EE414bbc4aF59Caf477b4b9bF296B' // referrer address for the 0.1% cut
+  const referrerAddress = '0x7348e031698eE8D3C3451a9B1F71A5779b1e62e2' // referrer address for the 0.1% cut
   const referrerFee = 0.1
   // network provider selection
   const chainId = network
